@@ -4,7 +4,7 @@ import {StyleSheet,Text,View, TextInput,Button,TouchableHighlight,Alert,ScrollVi
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import shortid from 'shortid';
 
-const Formulario = ({ Citas,setCitas,mostrar_formulario }) => {
+const Formulario = ({ citas,setCitas,mostrar_formulario }) => {
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
 
@@ -49,9 +49,10 @@ const Formulario = ({ Citas,setCitas,mostrar_formulario }) => {
         const cita = { paciente,propietario,Telefono, fecha, hora,sintomas};
         cita.id = shortid.generate();
         console.log(cita);
+        console.log(citas);
 
         //agregar al state
-        const  citas_new  = [...Citas, cita];
+        const  citas_new  = [...citas, cita];
         setCitas(citas_new);
         mostrar_formulario(false);
 
